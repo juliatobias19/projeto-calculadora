@@ -1,12 +1,12 @@
 let displayValue = '0';
 let history = [];
 
-// Função usada para
+// Função usada para atualizar o visor
 function updateDisplay() {
     document.getElementById('display').innerText = displayValue;
 }
 
-// Função usada para
+// Função usada para adicionar os digitos no visor
 function appendToDisplay(value) {
     if (displayValue === '0') {
         displayValue = value;
@@ -16,13 +16,13 @@ function appendToDisplay(value) {
     updateDisplay();
 }
 
-// Função usada para
+// Função usada para limpar o conteúdo do visor 
 function clearDisplay() {
     displayValue = '0';
     updateDisplay();
 }
 
-// Função usada para
+// Função usada para salvar o histórico
 function setOperation(op) {
     history.push(displayValue);
     history.push(op);
@@ -30,7 +30,7 @@ function setOperation(op) {
     clearDisplay();
 }
 
-// Função usada para
+// Função usada para fazer o cálculo 
 function calculate() {
     if (history.length < 2) {
         return;
@@ -49,7 +49,7 @@ function calculate() {
     updateDisplay();
 }
 
-// Função usada para
+// Função usada para mostrar a data e hora do histórico 
 function updateHistoryTable() {
     const table = document.getElementById('history-table');
     const row = table.insertRow(-1);
@@ -67,6 +67,5 @@ function updateHistoryTable() {
         updateDisplay();
     });
 }
-
 
 
